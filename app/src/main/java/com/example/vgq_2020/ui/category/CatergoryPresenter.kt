@@ -8,4 +8,8 @@ class CatergoryPresenter(activity: CategoryActivity): CategoryContract.Presenter
         view.initView();
     }
 
+    override fun getCategory(): String {
+        TODO("create model") //To change body of created functions use File | Settings | File Templates.
+    }
+
 }

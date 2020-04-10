@@ -10,6 +10,6 @@ interface CategoryContract {
     }
 
     interface  Presenter: BasePresenter {
-
+        fun getCategory(): String
     }
 }
