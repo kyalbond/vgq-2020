@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">vgq-2020</string>
+
+    <string name="play">Play</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="settings">Settings</string>
+    <string name="submit">Submit</string>
+    <string name="progress">Overall Progress</string>
 </resources>
