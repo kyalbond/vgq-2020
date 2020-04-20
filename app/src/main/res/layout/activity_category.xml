@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.category.CategoryActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="15dp">
 
         <TextView
             android:id="@+id/category_header"
@@ -20,11 +20,16 @@
             android:text="@string/category" />
 
         <include
-            android:id="@+id/card1"
+            android:id="@+id/category_card1"
             layout="@layout/category_card"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="42dp" />
+            android:layout_height="wrap_content"/>
+
+        <include
+            android:id="@+id/category_card2"
+            layout="@layout/category_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
