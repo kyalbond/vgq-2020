@@ -1,16 +1,18 @@
 package com.example.vgq_2020.ui.category
 
+import com.example.vgq_2020.model.data.Category
+import com.example.vgq_2020.model.data.JSONLoader
+
 class CategoryPresenter(activity: CategoryActivity): CategoryContract.Presenter {
 
     private var view: CategoryActivity = activity;
 
     init {
-        getCategory()
-        view.initView();
+
     }
 
-    override fun getCategory(): List<String> {
-        return listOf("Characters", "Logos")
+    override fun getCategory(): List<Category>? {
+        return JSONLoader.getCategories()
     }
 
 }

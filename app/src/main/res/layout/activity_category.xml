@@ -19,18 +19,11 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/category" />
 
-        <include
-            android:id="@+id/category_card1"
-            layout="@layout/category_card"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/category_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <include
-            android:id="@+id/category_card2"
-            layout="@layout/category_card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

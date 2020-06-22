@@ -1,0 +1,4 @@
+{"characters":[
+    { "code": "c01-01", "answers": ["Mario"], "hints": ["Luigi's Brother", "M_R_O", "Really?"], "imgURL": "mario.png"},
+
+]}
