@@ -2,20 +2,18 @@ package com.example.vgq_2020.ui.category
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
-import android.widget.TextView
+
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.vgq_2020.R
 import kotlinx.android.synthetic.main.activity_category.*
-import kotlinx.android.synthetic.main.activity_category.view.*
-import kotlinx.android.synthetic.main.category_card.*
-import kotlinx.android.synthetic.main.category_card.view.*
 
 
 class CategoryActivity : AppCompatActivity(), CategoryContract.View {
 
-    private var presenter: CategoryPresenter? = null
+    private lateinit var presenter: CategoryPresenter
     private lateinit var linearLayoutManager: LinearLayoutManager
+    private lateinit var categoryAdapter: CategoryAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,8 +25,11 @@ class CategoryActivity : AppCompatActivity(), CategoryContract.View {
 }
 
     override fun setupCategories() {
-        val categories = presenter?.getCategory()
+        val categories= presenter.getCategory()
 
+        category_recycler_view.adapter = categories?.let { CategoryAdapter(it) }
+        category_recycler_view.layoutManager  = LinearLayoutManager(this)
+        category_recycler_view.setHasFixedSize(true)
 
     }
 

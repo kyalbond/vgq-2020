@@ -1,7 +1,8 @@
 package com.example.vgq_2020.model.data
 
-class Category (val title: String,
-                val questions: List<String>){
+class Category (val categoryName: String,
+                val level: String,
+                val questionList: List<String>){
 
 }
 
