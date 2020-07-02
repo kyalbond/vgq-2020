@@ -1,6 +1,6 @@
 [
-    { "title":"Characters", "level": "1", "questions":[ "c01-01" ]},
-    { "title":"Logos", "level": "2", "questions":[ "l01-01" ] },
-    { "title":"Stage", "level": "3", "questions":[ "s01-01" ] },
-    { "title":"Music", "level": "4", "questions":[ "m01-01" ] }
+    { "categoryName":"Characters", "level": "1", "questionList":[ "c01-01" ]},
+    { "categoryName":"Logos", "level": "2", "questionList":[ "l01-01" ] },
+    { "categoryName":"Stage", "level": "3", "questionList":[ "s01-01" ] },
+    { "categoryName":"Music", "level": "4", "questionList":[ "m01-01" ] }
 ]

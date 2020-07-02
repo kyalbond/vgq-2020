@@ -22,7 +22,7 @@ class CategoryActivity : AppCompatActivity(), CategoryContract.View {
 
         presenter = CategoryPresenter(this)
         setupCategories()
-}
+    }
 
     override fun setupCategories() {
         val categories= presenter.getCategory()

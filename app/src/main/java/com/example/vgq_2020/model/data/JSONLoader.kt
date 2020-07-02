@@ -8,19 +8,20 @@ import java.util.regex.Pattern
 
 class JSONLoader {
 
-    companion object {
-        fun getCategories(): List<Category>? {
-            val result = Klaxon().parseArray<Category>("[\n" +
-                    "    { \"categoryName\":\"Characters\", \"level\": \"1\", \"questionList\":[ \"c01-01\" ]},\n" +
-                    "    { \"categoryName\":\"Logos\", \"level\": \"2\", \"questionList\":[ \"l01-01\" ] },\n" +
-                    "    { \"categoryName\":\"Stage\", \"level\": \"3\", \"questionList\":[ \"s01-01\" ] },\n" +
-                    "    { \"categoryName\":\"Music\", \"level\": \"4\", \"questionList\":[ \"m01-01\" ] }\n" +
-                    "]\n")
+    private var fileName: String = "[\n" +
+            "    { \"categoryName\":\"Characters\", \"level\": \"1\", \"questionList\":[ \"c01-01\" ]},\n" +
+            "    { \"categoryName\":\"Logos\", \"level\": \"2\", \"questionList\":[ \"l01-01\" ] },\n" +
+            "    { \"categoryName\":\"Stage\", \"level\": \"3\", \"questionList\":[ \"s01-01\" ] },\n" +
+            "    { \"categoryName\":\"Music\", \"level\": \"4\", \"questionList\":[ \"m01-01\" ] }\n" +
+            "]\n"
+
+    fun getCategories(): List<Category>? {
+            val result = Klaxon().parseArray<Category>(fileName)
             if (result != null) {
                 result.forEach { Log.e(it.categoryName.toString(), it.questionList.toString()) }
                 return result;
             }
             return null
         }
-    }
+
 }
