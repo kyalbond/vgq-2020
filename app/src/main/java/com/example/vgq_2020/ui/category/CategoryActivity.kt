@@ -1,5 +1,6 @@
 package com.example.vgq_2020.ui.category
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -9,7 +10,7 @@ import com.example.vgq_2020.R
 import kotlinx.android.synthetic.main.activity_category.*
 
 
-class CategoryActivity : AppCompatActivity(), CategoryContract.View {
+class CategoryActivity : AppCompatActivity(), CategoryContract.View, CategoryAdapter.OnCategoryListener {
 
     private lateinit var presenter: CategoryPresenter
     private lateinit var linearLayoutManager: LinearLayoutManager
@@ -27,7 +28,7 @@ class CategoryActivity : AppCompatActivity(), CategoryContract.View {
     override fun setupCategories() {
         val categories= presenter.getCategory()
 
-        category_recycler_view.adapter = categories?.let { CategoryAdapter(it) }
+        category_recycler_view.adapter = categories?.let { CategoryAdapter(it, this) }
         category_recycler_view.layoutManager  = LinearLayoutManager(this)
         category_recycler_view.setHasFixedSize(true)
 
@@ -35,5 +36,10 @@ class CategoryActivity : AppCompatActivity(), CategoryContract.View {
 
     override fun initView() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onCategoryClick(position: Int) {
+        val intent = Intent(this, CategoryActivity::class.java)
+        startActivity(intent)
     }
 }
